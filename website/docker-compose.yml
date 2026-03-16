@@ -1,0 +1,11 @@
+services:
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: alex-portfolio
+    ports:
+      - "3000:3000"
+    restart: always
+    environment:
+      - NODE_ENV=production
