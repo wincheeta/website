@@ -3,7 +3,7 @@
 import React from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { ArrowLeft, Github, ExternalLink, Cpu, Code2, Zap } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, Cpu, Code2, Zap, CheckCircle2, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/data/projects";
@@ -127,11 +127,34 @@ export default function ProjectContent() {
             <section className="space-y-4">
               <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">Project Overview</h2>
               <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-lg">
-                This project represents a significant milestone in engineering. By leveraging modern
-                architectural patterns and focusing on performance metrics, we achieved a result that
-                exceeded initial expectations. The primary focus was on scalability and user interaction
-                fidelity.
+                {project.overview}
               </p>
+            </section>
+
+            {/* Key Results */}
+            <section className="space-y-6 pt-4">
+              <h2 className="text-2xl font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-primary" />
+                Key Results & Impact
+              </h2>
+              <div className="grid grid-cols-1 gap-4">
+                {project.results.map((result, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 * index }}
+                    className="flex items-start gap-3 p-4 rounded-xl border border-zinc-200 bg-white dark:border-white/10 dark:bg-white/5"
+                  >
+                    <div className="mt-1 h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                    </div>
+                    <p className="text-zinc-700 dark:text-zinc-300 font-medium">
+                      {result}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </section>
           </div>
 
@@ -159,20 +182,48 @@ export default function ProjectContent() {
               <ul className="space-y-3 text-sm">
                 <li className="flex justify-between">
                   <span className="text-zinc-500">Role</span>
-                  <span className="font-medium dark:text-zinc-300">Lead Engineer</span>
+                  <span className="font-medium dark:text-zinc-300">{project.role}</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-zinc-500">Timeline</span>
-                  <span className="font-medium dark:text-zinc-300">4 Months</span>
+                  <span className="font-medium dark:text-zinc-300">{project.timeline}</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-zinc-500">Impact</span>
-                  <span className="font-medium text-accent">High Performance</span>
+                  <span className="font-medium text-primary">{project.impact}</span>
                 </li>
               </ul>
             </section>
           </aside>
         </div>
+
+        {/* Project Gallery */}
+        {project.gallery && project.gallery.length > 0 && (
+          <section className="space-y-8 pt-12">
+            <div className="flex items-center gap-2">
+              <ImageIcon className="h-5 w-5 text-primary" />
+              <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">Project Gallery</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {project.gallery.map((img, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group relative aspect-video overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-white/10 dark:bg-white/5"
+                >
+                  <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity">
+                    <ImageIcon className="h-12 w-12 text-zinc-400" />
+                  </div>
+                  {/* Placeholder for actual images */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        )}
       </main>
     </div>
   );
