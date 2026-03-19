@@ -27,10 +27,7 @@ export default function ProjectContent() {
   }
 
   return (
-    <div className="relative min-h-screen bg-zinc-50 dark:bg-zinc-950 pt-32 pb-24 transition-colors duration-500">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)]" />
-
+    <div className="relative min-h-screen pt-32 pb-24 transition-colors duration-500">
       <main className="max-w-4xl mx-auto px-6 space-y-12">
         {/* Navigation */}
         <motion.button

@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { FlowField } from "@/components/ui/FlowField";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-50 dark:bg-zinc-950 transition-colors duration-500`}
       >
         <ThemeProvider
           attribute="class"
@@ -42,8 +43,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="flex min-h-screen flex-col">
+            <FlowField />
             <Navbar />
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow relative">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>

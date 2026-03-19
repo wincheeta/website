@@ -14,10 +14,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-zinc-50 dark:bg-zinc-950 pt-32 pb-24 transition-colors duration-500">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)]" />
-
+    <div className="relative min-h-screen pt-32 pb-24 transition-colors duration-500">
       <main className="max-w-4xl mx-auto px-6 space-y-20">
         {/* Hero Section */}
         <section className="space-y-8">
@@ -80,7 +77,7 @@ export default function AboutPage() {
             <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
               From low-level CUDA optimizations to high-level React architecture, I bridge 
               the gap between complex backend systems and polished frontend interfaces. 
-              I specialize in making the "impossible" performant.
+              I specialize in making the &quot;impossible&quot; performant.
             </p>
           </motion.div>
         </section>
