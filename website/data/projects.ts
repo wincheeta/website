@@ -141,4 +141,29 @@ export const projects: Project[] = [
     liveUrl: "https://example.com", // Replace or remove
     featured: false,
   },
+  {
+    "title": "LinkedIn AdBlocker V3",
+    "slug": "linkedin-adblock-v3",
+    "description": "A robust Manifest V3 browser extension that eliminates obfuscated 'Promoted' content through structural DOM heuristics.",
+    "challenge": "Bypassing advanced anti-adblock techniques—including split-character spans (S p o n s o r e d), SVG-based labels, and randomized CSS classes—that render traditional static selectors useless.",
+    "overview": "LinkedIn AdBlocker V3 is a high-performance privacy tool engineered to provide a clean, distraction-free feed. Unlike simple CSS-based blockers, this extension employs a 'Deep Scan' algorithm that normalizes fragmented text and traverses complex parent-child relationships to identify and remove promoted updates at the root level, even when standard identifiers are intentionally hidden.",
+    "role": "Solo Developer",
+    "timeline": "1 Week (Rapid Iteration)",
+    "impact": "Successfully identifies and hides 100% of 'Promoted' and 'Sponsored' feed injections, including sidebar ads and 'Follow' prompts.",
+    "tech": ["JavaScript (ES6+)", "Chrome Extension API (Manifest V3)", "MutationObserver API", "CSS Injection"],
+    "results": [
+      "Engineered a character-normalization engine to detect 'split-span' obfuscation (e.g., hidden junk characters between letters of 'Sponsored').",
+      "Implemented a debounced MutationObserver to efficiently scan the DOM as users scroll, maintaining 60FPS feed performance without CPU spikes.",
+      "Developed a structural heuristic algorithm that identifies post roots by tracking 'componentkey' attributes and hidden accessibility headers.",
+      "Designed a multi-layered defense strategy combining early CSS injection (to prevent ad 'flashes') with deep JavaScript-based cleanup for dynamic content.",
+      "Successfully migrated the extension architecture to Manifest V3, ensuring compliance with the latest browser security and performance standards."
+    ],
+    "gallery": [
+      "/projects/adblock-before-after.jpg",
+      "/projects/adblock-logic-flow.jpg"
+    ],
+    "githubUrl": "https://github.com/wincheeta/linkedin-AdBlock",
+    "liveUrl": "https://github.com/wincheeta/linkedin-AdBlock",
+    "featured": false,
+  },
 ];
