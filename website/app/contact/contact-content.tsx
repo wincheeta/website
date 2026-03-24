@@ -53,10 +53,10 @@ export default function ContactPage() {
             animate={{ opacity: 1, x: 0 }}
             className="space-y-4"
           >
-            <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white sm:text-6xl">
+            <h1 className="text-4xl font-black tracking-tight text-black dark:text-white sm:text-6xl">
               Let&apos;s <span className="text-primary">Connect.</span>
             </h1>
-            <p className="text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <p className="text-xl text-zinc-800 dark:text-zinc-200 leading-relaxed">
               Have a high-impact project in mind or looking for a senior engineer to join your team? 
               I&apos;m currently open to new opportunities for 2026.
             </p>
@@ -68,8 +68,8 @@ export default function ContactPage() {
                 <Mail className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm font-bold text-zinc-900 dark:text-white">Email</p>
-                <a href="mailto:alex@example.com" className="text-zinc-600 dark:text-zinc-400 hover:text-primary transition-colors">
+                <p className="text-sm font-bold text-black dark:text-white">Email</p>
+                <a href="mailto:alex@example.com" className="text-zinc-800 dark:text-zinc-200 hover:text-primary transition-colors">
                   alex@example.com
                 </a>
               </div>
@@ -80,18 +80,18 @@ export default function ContactPage() {
                 <MapPin className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm font-bold text-zinc-900 dark:text-white">Location</p>
-                <p className="text-zinc-600 dark:text-zinc-400">San Francisco, CA (Remote Friendly)</p>
+                <p className="text-sm font-bold text-black dark:text-white">Location</p>
+                <p className="text-zinc-800 dark:text-zinc-200">San Francisco, CA (Remote Friendly)</p>
               </div>
             </div>
           </div>
 
           <div className="pt-8 border-t border-zinc-200 dark:border-white/10 flex gap-4">
             <a href="#" className="p-3 rounded-xl bg-white border border-zinc-200 dark:bg-white/5 dark:border-white/10 hover:border-primary transition-all">
-              <Linkedin className="h-6 w-6 text-zinc-600 dark:text-zinc-400" />
+              <Linkedin className="h-6 w-6 text-zinc-800 dark:text-zinc-200" />
             </a>
             <a href="#" className="p-3 rounded-xl bg-white border border-zinc-200 dark:bg-white/5 dark:border-white/10 hover:border-primary transition-all">
-              <Github className="h-6 w-6 text-zinc-600 dark:text-zinc-400" />
+              <Github className="h-6 w-6 text-zinc-800 dark:text-zinc-200" />
             </a>
           </div>
         </div>

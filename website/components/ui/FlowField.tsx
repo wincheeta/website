@@ -8,7 +8,6 @@ interface Particle {
   y: number;
   vx: number;
   vy: number;
-  history: { x: number; y: number }[];
 }
 
 export const FlowField: React.FC = () => {
@@ -27,7 +26,7 @@ export const FlowField: React.FC = () => {
     let particles: Particle[] = [];
     let width = 0;
     let height = 0;
-    const particleCount = 2000;
+    const particleCount = 1200; // Increased for "busyness"
 
     const initParticles = () => {
       particles = Array.from({ length: particleCount }, () => ({
@@ -35,7 +34,6 @@ export const FlowField: React.FC = () => {
         y: Math.random() * height,
         vx: (Math.random() - 0.5) * 2,
         vy: (Math.random() - 0.5) * 2,
-        history: [],
       }));
     };
 
@@ -52,57 +50,61 @@ export const FlowField: React.FC = () => {
     };
 
     const getNoise = (x: number, y: number) => {
-      // Simple pseudo-random/noise function for flow
-      const scale = 0.01;
-      return Math.sin(x * scale) * Math.cos(y * scale) * Math.PI * 2;
+      const scale = 0.015;
+      return Math.sin(x * scale) * Math.cos(y * scale) * Math.PI * 4;
     };
 
     const animate = () => {
-      // Darker, more persistent trails for high-contrast look
-      ctx.fillStyle = resolvedTheme === "dark" ? "rgba(2, 2, 4, 0.08)" : "rgba(250, 250, 250, 0.05)";
+      // More aggressive clearing for a more stable background
+      ctx.fillStyle = resolvedTheme === "dark" ? "rgba(2, 2, 4, 0.15)" : "rgba(255, 255, 255, 0.15)";
       ctx.fillRect(0, 0, width, height);
 
       particles.forEach((p) => {
-        const angle = getNoise(p.x, p.y);
-        
-        // Attraction/Swerve logic
+        const currentAngle = getNoise(p.x, p.y);
+
         const dx = mouseRef.current.x - p.x;
         const dy = mouseRef.current.y - p.y;
         const distSq = dx * dx + dy * dy;
-        const maxDist = 300;
+        const maxDist = 350;
         
-        let forceX = Math.cos(angle);
-        let forceY = Math.sin(angle);
+        let forceX = Math.cos(currentAngle);
+        let forceY = Math.sin(currentAngle);
 
         if (distSq < maxDist * maxDist) {
           const dist = Math.sqrt(distSq);
-          const strength = (1 - dist / maxDist) * 0.5;
-          forceX += (dx / dist) * strength;
-          forceY += (dy / dist) * strength;
+          const strength = Math.pow(1 - dist / maxDist, 2) * 2.5;
+          // Epsilon (0.1) added to dist to prevent NaN (Division by Zero)
+          forceX += (dx / (dist + 0.1)) * strength;
+          forceY += (dy / (dist + 0.1)) * strength;
         }
 
-        p.vx += forceX * 0.1;
-        p.vy += forceY * 0.1;
+        p.vx += forceX * 0.15;
+        p.vy += forceY * 0.15;
 
-        // Friction/Speed limit
-        p.vx *= 0.95;
-        p.vy *= 0.95;
+        p.vx *= 0.92;
+        p.vy *= 0.92;
+
+        // Speed floor: Keep them busy
+        const speedSq = p.vx * p.vx + p.vy * p.vy;
+        if (speedSq < 0.25) { // speed < 0.5
+          p.vx += (Math.random() - 0.5) * 0.5;
+          p.vy += (Math.random() - 0.5) * 0.5;
+        }
 
         p.x += p.vx;
         p.y += p.vy;
 
-        // Wrap around
         if (p.x < 0) p.x = width;
         if (p.x > width) p.x = 0;
         if (p.y < 0) p.y = height;
         if (p.y > height) p.y = 0;
+// Draw particle
+ctx.beginPath();
+// Fainter particles to ensure text readability
+ctx.strokeStyle = resolvedTheme === "dark" ? "rgba(255, 255, 255, 0.08)" : "rgba(59, 130, 246, 0.05)";
+ctx.lineWidth = 1;
 
-        // Draw particle
-        ctx.beginPath();
-        ctx.strokeStyle = resolvedTheme === "dark" ? "rgba(255, 255, 255, 0.2)" : "rgba(0, 0, 0, 0.1)";
-        ctx.lineWidth = 1;
         
-        // Use history for smoother trails if needed, or just lines
         const prevX = p.x - p.vx;
         const prevY = p.y - p.vy;
         ctx.moveTo(prevX, prevY);

@@ -23,10 +23,10 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             className="space-y-4"
           >
-            <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white sm:text-6xl">
+            <h1 className="text-4xl font-black tracking-tight text-black dark:text-white sm:text-6xl">
               About <span className="text-primary">Me.</span>
             </h1>
-            <p className="text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <p className="text-xl text-zinc-800 dark:text-zinc-200 leading-relaxed">
               I am a Senior Full-Stack Engineer with over 8 years of experience building scalable, 
               high-performance web applications. My focus is on the intersection of technical 
               rigor and creative user experience.
@@ -60,8 +60,8 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">Professional Philosophy</h2>
-            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <h2 className="text-2xl font-bold text-black dark:text-white">Professional Philosophy</h2>
+            <p className="text-zinc-800 dark:text-zinc-200 leading-relaxed">
               I believe that software should be invisible—so fast and intuitive that it 
               simply facilitates human intent without friction. Performance is not a 
               feature; it is a foundational requirement for accessibility and user trust.
@@ -73,8 +73,8 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">The Technical Edge</h2>
-            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <h2 className="text-2xl font-bold text-black dark:text-white">The Technical Edge</h2>
+            <p className="text-zinc-800 dark:text-zinc-200 leading-relaxed">
               From low-level CUDA optimizations to high-level React architecture, I bridge 
               the gap between complex backend systems and polished frontend interfaces. 
               I specialize in making the &quot;impossible&quot; performant.
@@ -84,7 +84,7 @@ export default function AboutPage() {
 
         {/* Core Expertise */}
         <section className="space-y-12">
-          <h2 className="text-3xl font-extrabold text-center text-zinc-900 dark:text-white">Core Expertise</h2>
+          <h2 className="text-3xl font-black text-center text-black dark:text-white">Core Expertise</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {skills.map((skill, index) => (
               <motion.div
@@ -96,10 +96,10 @@ export default function AboutPage() {
                 className="group p-6 rounded-2xl border border-zinc-200 bg-white/50 backdrop-blur-sm dark:border-white/10 dark:bg-white/5 transition-all hover:border-primary/50"
               >
                 <skill.icon className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-lg font-bold text-zinc-900 dark:text-white group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-bold text-black dark:text-white group-hover:text-primary transition-colors">
                   {skill.name}
                 </h3>
-                <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-2">
+                <p className="text-sm text-zinc-800 dark:text-zinc-200 mt-2">
                   {skill.description}
                 </p>
               </motion.div>

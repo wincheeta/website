@@ -30,7 +30,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl"
+          className="text-4xl font-black tracking-tight text-black dark:text-white sm:text-6xl md:text-7xl"
         >
           Engineering the Future of <br />
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -42,7 +42,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-8 text-lg leading-8 text-zinc-600 dark:text-zinc-400 sm:text-xl"
+          className="mt-8 text-lg leading-8 text-zinc-800 dark:text-zinc-200 sm:text-xl"
         >
           Senior Full-Stack Engineer & Creative Developer. I build high-performance, 
           accessible, and visually stunning applications that solve real-world problems.

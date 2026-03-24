@@ -42,6 +42,31 @@ export const projects: Project[] = [
     "featured": false
   },
   {
+    "title": "Chesscape",
+    "slug": "chesscape",
+    "description": "Advanced Python-based chess engine and GUI featuring a custom AI with Alpha-Beta pruning and bitboard-based move generation.",
+    "challenge": "Implementing a performant chess engine in Python by leveraging bitboards (gmpy2) and Zobrist hashing for sub-100ms move selection, while maintaining a modular and themeable Tkinter GUI.",
+    "overview": "Chesscape is an end-to-end chess platform that combines classic gameplay with a sophisticated AI bot. It features multiple aesthetic themes (Classic, Periodic, Realistic), FEN string support, and a complete move validation system. The engine uses a Minimax search enhanced by Alpha-Beta pruning, Quiescence search, and a transposition table to compete with seasoned players.",
+    "role": "Lead Software Architect",
+    "timeline": "6 Months",
+    "impact": "2500+ nodes/sec Search Speed",
+    "tech": ["Python", "Tkinter", "NumPy", "gmpy2"],
+    "results": [
+      "Developed a custom AI bot utilizing Minimax with Alpha-Beta pruning and Quiescence search for efficient move selection.",
+      "Engineered a high-performance bitboard representation using gmpy2 for optimized legal move generation and board evaluation.",
+      "Integrated Zobrist hashing and a transposition table to significantly increase search depth by eliminating redundant calculations.",
+      "Designed a modular and responsive Tkinter GUI with support for FEN import/export and four interchangeable aesthetic piece sets.",
+      "Implemented a robust move-handling system supporting complex rules including castling, en-passant, and promotion."
+    ],
+    "gallery": [
+      "/projects/chesscape-1.jpg",
+      "/projects/chesscape-2.jpg"
+    ],
+    "githubUrl": "https://github.com",
+    "liveUrl": "https://example.com",
+    "featured": true
+  },
+  {
     title: "Stumble",
     slug: "stumble",
     description: "AI-powered geospatial engine for optimized social routing and LLM experimentation.",
@@ -64,32 +89,32 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/hacksoton-stumble/stumble",
     liveUrl: "https://stumble-app.example.com",
-    featured: true,
+    featured: false,
   },
   {
-    "title": "Chesscape",
-    "slug": "chesscape",
-    "description": "Advanced Python-based chess engine and GUI featuring a custom AI with Alpha-Beta pruning and bitboard-based move generation.",
-    "challenge": "Implementing a performant chess engine in Python by leveraging bitboards (gmpy2) and Zobrist hashing for sub-100ms move selection, while maintaining a modular and themeable Tkinter GUI.",
-    "overview": "Chesscape is an end-to-end chess platform that combines classic gameplay with a sophisticated AI bot. It features multiple aesthetic themes (Classic, Periodic, Realistic), FEN string support, and a complete move validation system. The engine uses a Minimax search enhanced by Alpha-Beta pruning, Quiescence search, and a transposition table to compete with seasoned players.",
-    "role": "Lead Software Architect",
-    "timeline": "6 Months",
-    "impact": "2500+ nodes/sec Search Speed",
-    "tech": ["Python", "Tkinter", "NumPy", "gmpy2"],
-    "results": [
-      "Developed a custom AI bot utilizing Minimax with Alpha-Beta pruning and Quiescence search for efficient move selection.",
-      "Engineered a high-performance bitboard representation using gmpy2 for optimized legal move generation and board evaluation.",
-      "Integrated Zobrist hashing and a transposition table to significantly increase search depth by eliminating redundant calculations.",
-      "Designed a modular and responsive Tkinter GUI with support for FEN import/export and four interchangeable aesthetic piece sets.",
-      "Implemented a robust move-handling system supporting complex rules including castling, en-passant, and promotion."
-      ],
-    "gallery": [
-      "/projects/chesscape-1.jpg",
-      "/projects/chesscape-2.jpg"
-      ],
-    "githubUrl": "https://github.com",
-    "liveUrl": "https://example.com",
-    "featured": true
+    title: "Regexle Solver",
+    slug: "regexle-solver",
+    description: "A high-performance constraint satisfaction solver for hexagonal regular expression puzzles.",
+    challenge: "Efficiently solving NP-complete constraints across a non-Euclidean hexagonal grid with intersecting regular expression requirements.",
+    overview: "HexaRegex Solver is a specialized engine designed to solve 'Regexle' puzzles—complex hexagonal grids where every line across three axes must satisfy a unique regular expression. The project implements a custom regex engine, a bounded language generator, and a backtracking solver optimized with pruning and entropy-based heuristics to navigate the massive search space of valid character combinations.",
+    role: "Lead Developer",
+    timeline: "4 Weeks",
+    impact: "Successfully solves complex 27-regex hexagonal puzzles in milliseconds.",
+    tech: ["Haskell", "Functional Programming", "Constraint Logic", "Parser Combinators"],
+    results: [
+      "Engineered a trilinear coordinate system (r, q, s) to manage cell intersections across three hexagonal axes.",
+      "Implemented a backtracking search algorithm optimized with a Minimum Remaining Values (MRV) heuristic to reduce computational complexity.",
+      "Developed a bounded language generator capable of expanding complex recursive regular expressions into finite sets of valid strings.",
+      "Built a robust monadic parser library from scratch to handle regex tokenization and AST generation with high type safety.",
+      "Achieved significant performance gains through an iterative pruning loop that eliminates invalid candidates before triggering backtracking."
+    ],
+    gallery: [
+      "/projects/hexaregex-1.jpg",
+      "/projects/hexaregex-2.jpg"
+    ],
+    githubUrl: "https://github.com/yourusername/hexaregex-solver",
+    liveUrl: "https://yourportfolio.com/hexaregex",
+    featured: true,
   },
   {
     title: "Centurion Chess",
@@ -116,29 +141,4 @@ export const projects: Project[] = [
     liveUrl: "https://example.com", // Replace or remove
     featured: false,
   },
-  {
-    title: "HexaRegex Solver",
-    slug: "hexaregex-solver",
-    description: "A high-performance constraint satisfaction solver for hexagonal regular expression puzzles.",
-    challenge: "Efficiently solving NP-complete constraints across a non-Euclidean hexagonal grid with intersecting regular expression requirements.",
-    overview: "HexaRegex Solver is a specialized engine designed to solve 'Regexle' puzzles—complex hexagonal grids where every line across three axes must satisfy a unique regular expression. The project implements a custom regex engine, a bounded language generator, and a backtracking solver optimized with pruning and entropy-based heuristics to navigate the massive search space of valid character combinations.",
-    role: "Lead Developer",
-    timeline: "4 Weeks",
-    impact: "Successfully solves complex 27-regex hexagonal puzzles in milliseconds.",
-    tech: ["Haskell", "Functional Programming", "Constraint Logic", "Parser Combinators"],
-    results: [
-      "Engineered a trilinear coordinate system (r, q, s) to manage cell intersections across three hexagonal axes.",
-      "Implemented a backtracking search algorithm optimized with a Minimum Remaining Values (MRV) heuristic to reduce computational complexity.",
-      "Developed a bounded language generator capable of expanding complex recursive regular expressions into finite sets of valid strings.",
-      "Built a robust monadic parser library from scratch to handle regex tokenization and AST generation with high type safety.",
-      "Achieved significant performance gains through an iterative pruning loop that eliminates invalid candidates before triggering backtracking."
-    ],
-    gallery: [
-      "/projects/hexaregex-1.jpg",
-      "/projects/hexaregex-2.jpg"
-    ],
-    githubUrl: "https://github.com/yourusername/hexaregex-solver",
-    liveUrl: "https://yourportfolio.com/hexaregex",
-    featured: true,
-  }
 ];

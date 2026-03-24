@@ -48,7 +48,7 @@ export default function ProjectContent() {
             className="flex flex-col md:flex-row md:items-end justify-between gap-6"
           >
             <div className="space-y-2">
-              <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white sm:text-6xl">
+              <h1 className="text-4xl font-black tracking-tight text-black dark:text-white sm:text-6xl">
                 {project.title}
               </h1>
               <p className="text-xl text-primary font-medium italic">
@@ -110,27 +110,27 @@ export default function ProjectContent() {
           {/* Main Case Study */}
           <div className="md:col-span-2 space-y-8">
             <section className="space-y-4">
-              <h2 className="text-2xl font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+              <h2 className="text-2xl font-bold text-black dark:text-white flex items-center gap-2">
                 <Zap className="h-5 w-5 text-primary" />
                 The Key Challenge
               </h2>
               <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 dark:bg-primary/10">
-                <p className="text-lg leading-relaxed text-zinc-700 dark:text-zinc-200 font-medium">
+                <p className="text-lg leading-relaxed text-zinc-900 dark:text-zinc-100 font-medium">
                   {project.challenge}
                 </p>
               </div>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">Project Overview</h2>
-              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-lg">
+              <h2 className="text-2xl font-bold text-black dark:text-white">Project Overview</h2>
+              <p className="text-zinc-800 dark:text-zinc-200 leading-relaxed text-lg">
                 {project.overview}
               </p>
             </section>
 
             {/* Key Results */}
             <section className="space-y-6 pt-4">
-              <h2 className="text-2xl font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+              <h2 className="text-2xl font-bold text-black dark:text-white flex items-center gap-2">
                 <CheckCircle2 className="h-5 w-5 text-primary" />
                 Key Results & Impact
               </h2>
@@ -146,7 +146,7 @@ export default function ProjectContent() {
                     <div className="mt-1 h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <div className="h-2 w-2 rounded-full bg-primary" />
                     </div>
-                    <p className="text-zinc-700 dark:text-zinc-300 font-medium">
+                    <p className="text-zinc-800 dark:text-zinc-200 font-medium">
                       {result}
                     </p>
                   </motion.div>
